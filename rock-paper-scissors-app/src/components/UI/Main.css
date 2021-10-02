@@ -1,0 +1,5 @@
+main {
+  background-image: var(--clr-bg);
+  color: white;
+  height: 100vh;
+}
