@@ -18,6 +18,7 @@
 
 # dependencies
 /node_modules
+rock-paper-scissors/node_modules
 /.pnp
 .pnp.js
 
