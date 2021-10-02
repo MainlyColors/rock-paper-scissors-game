@@ -1,6 +1,15 @@
 .GameScoreHeaderContainer {
-  width: 83vw;
+  width: clamp(13.5rem, 83vw, 43.75rem);
   height: clamp(96px, 25.6vw, 150px);
   border: 3px solid rgba(255, 255, 255, 0.289199);
   border-radius: 5px;
+  padding: 0px 9px 0px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: clamp(5.1875rem, 22.1vw, 9.9375);
+  height: clamp(3rem, 12.8vw, 6rem);
 }
