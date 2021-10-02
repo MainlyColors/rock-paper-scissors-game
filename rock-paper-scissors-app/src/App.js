@@ -1,9 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import Main from './components/UI/Main';
-
+import GameScoreHeader from './components/Game/GameScoreHeader';
 function App() {
-  return <Main>Test</Main>;
+  return (
+    <Main>
+      <GameScoreHeader />
+    </Main>
+  );
 }
 
 export default App;
