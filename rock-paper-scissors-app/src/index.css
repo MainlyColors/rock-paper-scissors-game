@@ -4,9 +4,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* outline: 3px solid red; */
 }
 
-:root {
+:root,
+*::before,
+*::after {
   --clr-font-primary: #fff;
   --clr-font-secondary: #565468;
   --clr-font-score: #2a45c2;
@@ -36,9 +39,8 @@
   --clr-game-icon-rock-primary: #db2e4d;
   --clr-game-icon-rock-secondary: #9d1634;
 
-  /* I really don't think this is needed */
   /* shadow on all game icons */
-  --clr-game-icon-shadow: linear-gradient(
+  --clr-game-icon-highlight: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.0966455) 0%,
     rgba(255, 255, 255, 0.0001) 100%

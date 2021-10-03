@@ -1,0 +1,6 @@
+.triangleContainer {
+  background-image: url('../../images/bg-triangle.svg');
+  background-repeat: no-repeat;
+  width: 312px;
+  height: 282px;
+}

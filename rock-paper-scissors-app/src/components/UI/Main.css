@@ -1,5 +1,8 @@
 main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: var(--clr-bg);
-  color: white;
   height: 100vh;
+  padding-top: 32px;
 }
