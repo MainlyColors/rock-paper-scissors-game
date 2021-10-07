@@ -11,12 +11,12 @@ function GameButton(props) {
       ? scissors
       : rock;
 
-  const btnContainerStyles = {
-    backgroundColor: `var(--clr-game-icon-${props.type}-secondary)`,
-  };
-
   return (
-    <div className={`${styles.btnContainer} ${styles[props.type]}`}>
+    <div
+      className={`${styles.btnContainer} ${styles[props.type]} ${
+        styles[props.gridLocation]
+      }`}
+    >
       <div className={styles.symbolBackground}>
         <img src={svgType} alt={props.type} />
       </div>
