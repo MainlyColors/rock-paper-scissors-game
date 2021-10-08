@@ -11,16 +11,25 @@ function GameButton(props) {
       ? scissors
       : rock;
 
+  const dynamicSvgSizeClass =
+    props.type === 'paper'
+      ? 'paperSize'
+      : props.type === 'scissors'
+      ? 'scissorsSize'
+      : 'rockSize';
+
   return (
-    <div
+    <button
       className={`${styles.btnContainer} ${styles[props.type]} ${
         styles[props.gridLocation]
       }`}
     >
-      <div className={styles.symbolBackground}>
+      <div
+        className={`${styles.symbolBackground} ${styles[dynamicSvgSizeClass]}`}
+      >
         <img src={svgType} alt={props.type} />
       </div>
-    </div>
+    </button>
   );
 }
 

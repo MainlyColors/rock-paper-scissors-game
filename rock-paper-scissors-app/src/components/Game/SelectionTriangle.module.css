@@ -4,7 +4,6 @@
   grid-template-columns: repeat(2, minmax(min-content, 1fr));
   grid-template-rows: repeat(2, minmax(min-content, 1fr));
   background-image: url('../../images/bg-triangle.svg');
-  background-size: 166px, 188px;
   background-size: clamp(10.375rem, 44.3vw, 15.875rem),
     clamp(11.75rem, 50.1vw, 17.9375rem);
   background-repeat: no-repeat;

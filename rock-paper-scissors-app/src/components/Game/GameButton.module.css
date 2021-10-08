@@ -1,3 +1,24 @@
+/* button style reset */
+
+.btnContainer {
+  /* appearance: none; */
+  padding: 0;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  background: none;
+  align-items: unset;
+  text-align: unset;
+  display: unset;
+  text-rendering: unset;
+  letter-spacing: unset;
+  word-spacing: unset;
+  text-indent: unset;
+  text-shadow: unset;
+  text-transform: unset;
+}
+
 .btnContainer,
 .btnContainer::before {
   /* mobile: 129.37px, fullscreen: 198px */
@@ -29,13 +50,19 @@
 
 /* secondary color - shadow effect */
 .btnContainer {
+  display: block;
   position: relative;
   /* mobile: 132.66px, fullscreen: 203px */
   height: clamp(8.29125rem, 35.376vw, 12.6875rem);
   z-index: 1;
   /* mobile: 15.03px, fullscreen: 23px */
   /* padding used to place white svg background */
-  padding-top: clamp(0.939375rem, 4.008vw, 1.4375rem);
+  /* padding-top: clamp(0.939375rem, 4.008vw, 1.4375rem); */
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.196706);
+}
+
+.btnContainer:focus {
+  outline: 15px solid black;
 }
 
 /* primary color */
@@ -80,10 +107,30 @@
 .symbolBackground img {
   display: block;
   position: relative;
-  width: clamp(2.625rem, 11.2vw, 4.53875rem);
-  height: clamp(3.125rem, 13.3vw, 5.280625rem);
   margin: auto;
   z-index: 3;
+}
+
+/* custom sizing per icon */
+.paperSize img {
+  /* width mobile: 42.87px fullscreen:65.54px */
+  width: clamp(2.679375rem, 11.4vw, 4.09625rem);
+  /* height mobile: 52.26px fullscreen:80.2px */
+  height: clamp(3.26625rem, 13.9vw, 5.0125rem);
+}
+
+.scissorsSize img {
+  /* width mobile: 45.07px fullscreen:69.07px */
+  width: clamp(2.816875rem, 12.0187vw, 4.316875rem);
+  /* height mobile: 51.09px fullscreen:78.22px */
+  height: clamp(3.193125rem, 13.62vw, 4.88875rem);
+}
+
+.rockSize img {
+  /* width mobile: 42.05px fullscreen:64.3px */
+  width: clamp(2.628125rem, 11.213vw, 4.01875rem);
+  /* height mobile: 42.2px fullscreen: 64.56px */
+  height: clamp(2.6375rem, 11.253vw, 4.035rem);
 }
 
 /* grid location classes */
@@ -104,4 +151,27 @@
   align-self: end;
   grid-column: 1 / 3;
   grid-row: 2 / 3;
+}
+
+.btnContainer:active {
+  transform: translateY(9px);
+}
+
+@media only screen and (min-width: 62.5rem) {
+  .btnContainer:hover {
+    cursor: pointer;
+  }
+
+  .btnContainer:hover::after {
+    position: absolute;
+    content: '';
+    top: -24px;
+    left: -27px;
+    width: 252px;
+    height: 248px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.05;
+    z-index: -2;
+  }
 }
