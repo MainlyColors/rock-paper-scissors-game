@@ -4,5 +4,5 @@ main {
   align-items: center;
   background-image: var(--clr-bg);
   min-height: 100vh;
-  padding-top: 32px;
+  padding: clamp(2rem, 8.53vw, 3rem) 2rem 0px 2rem;
 }

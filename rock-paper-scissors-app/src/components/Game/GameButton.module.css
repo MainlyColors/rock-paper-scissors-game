@@ -62,7 +62,7 @@
 }
 
 .btnContainer:focus {
-  outline: 15px solid black;
+  outline: 5px solid black;
 }
 
 /* primary color */

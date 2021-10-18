@@ -1,5 +1,5 @@
 // css
-import styles from './Main.css';
+import './Main.css';
 
 function Main(props) {
   return <main>{props.children}</main>;
