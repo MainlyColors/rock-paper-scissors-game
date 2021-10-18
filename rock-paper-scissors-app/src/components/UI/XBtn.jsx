@@ -4,6 +4,7 @@ import closeIcon from '../../images/icon-close.svg';
 function XBtn(props) {
   return (
     <button
+      autoFocus
       className={`${styles.xbtn} ${props.className}`}
       onClick={props.onClick}
     >

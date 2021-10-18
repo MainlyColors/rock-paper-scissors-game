@@ -27,9 +27,13 @@
   animation: pulse-white 2s 1;
 }
 
-.rulesBtn:active {
+/* .rulesBtn:active {
   background-image: unset;
   background-color: yellow;
+} */
+
+.rulesBtn:focus {
+  outline: 5px solid black;
 }
 
 @keyframes pulse-white {
