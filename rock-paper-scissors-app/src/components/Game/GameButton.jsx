@@ -18,11 +18,16 @@ function GameButton(props) {
       ? 'scissorsSize'
       : 'rockSize';
 
+  const handleClick = function () {
+    props.onClick(props.type);
+  };
+
   return (
     <button
-      className={`${styles.btnContainer} ${styles[props.type]} ${
-        styles[props.gridLocation]
-      }`}
+      disabled={props.isDisabled}
+      onClick={handleClick}
+      className={`${styles.btnContainer} ${styles[props.type]} 
+      ${styles[props.gridLocation]} ${props.className}`}
     >
       <div
         className={`${styles.symbolBackground} ${styles[dynamicSvgSizeClass]}`}

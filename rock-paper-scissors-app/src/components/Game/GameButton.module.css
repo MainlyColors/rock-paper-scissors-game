@@ -153,7 +153,7 @@
   grid-row: 2 / 3;
 }
 
-.btnContainer:active {
+.btnContainer:active:enabled {
   transform: translateY(9px);
 }
 

@@ -1,0 +1,6 @@
+.stageContainer {
+  display: flex;
+  justify-content: space-between;
+  width: clamp(20.3125rem, 86.7vw, 41.125rem);
+  margin-top: 6.1875rem;
+}

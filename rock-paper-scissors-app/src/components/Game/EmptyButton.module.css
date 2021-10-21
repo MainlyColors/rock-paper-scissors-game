@@ -1,0 +1,6 @@
+.emptyBtn {
+  width: clamp(6.875rem, 29.3vw, 14rem);
+  height: clamp(6.875rem, 29.3vw, 14rem);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+}
