@@ -21,8 +21,8 @@
 
 .btnContainer,
 .btnContainer::before {
-  /* mobile: 129.37px, fullscreen: 198px */
-  width: clamp(8.085625rem, 34.4987vw, 12.375rem);
+  /* mobile: 129.37px, fullscreen: 198px  */
+  width: clamp(8.085625em, 34.4987vw, 12.375em);
   border-radius: 50%;
 }
 
@@ -53,7 +53,7 @@
   display: block;
   position: relative;
   /* mobile: 132.66px, fullscreen: 203px */
-  height: clamp(8.29125rem, 35.376vw, 12.6875rem);
+  height: clamp(8.29125em, 35.376vw, 12.6875em);
   z-index: 1;
   /* mobile: 15.03px, fullscreen: 23px */
   /* padding used to place white svg background */
@@ -72,7 +72,7 @@
   left: 0;
   content: '';
   /* mobile: 126.78px, fullscreen: 194px */
-  height: clamp(7.92375rem, 33.808vw, 12.125rem);
+  height: clamp(7.92375em, 33.808vw, 12.125em);
   background-image: var(--clr-game-icon-highlight);
   z-index: -1;
 }
@@ -81,14 +81,14 @@
 .symbolBackground::before {
   border-radius: 50%;
   /* mobile: 99.31px, fullscreen: 152px */
-  width: clamp(6.206875rem, 26.483vw, 9.5rem);
+  width: clamp(6.206875em, 26.483vw, 9.5em);
 }
 
 .symbolBackground {
   display: flex;
   justify-content: center;
   /* mobile: 99.33px, fullscreen: 152px */
-  height: clamp(6.208125rem, 26.488vw, 9.5rem);
+  height: clamp(6.208125em, 26.488vw, 9.5em);
   position: relative;
   margin: auto;
   background-color: var(--clr-game-icon-center-shadow);
@@ -96,7 +96,7 @@
 
 .symbolBackground::before {
   /* mobile: 94.1px, fullscreen: 144px */
-  height: clamp(5.88125rem, 25.093vw, 9rem);
+  height: clamp(5.88125em, 25.093vw, 9em);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -114,23 +114,23 @@
 /* custom sizing per icon */
 .paperSize img {
   /* width mobile: 42.87px fullscreen:65.54px */
-  width: clamp(2.679375rem, 11.4vw, 4.09625rem);
+  width: clamp(2.679375em, 11.4vw, 4.09625em);
   /* height mobile: 52.26px fullscreen:80.2px */
-  height: clamp(3.26625rem, 13.9vw, 5.0125rem);
+  height: clamp(3.26625em, 13.9vw, 5.0125em);
 }
 
 .scissorsSize img {
   /* width mobile: 45.07px fullscreen:69.07px */
-  width: clamp(2.816875rem, 12.0187vw, 4.316875rem);
+  width: clamp(2.816875em, 12.0187vw, 4.316875em);
   /* height mobile: 51.09px fullscreen:78.22px */
-  height: clamp(3.193125rem, 13.62vw, 4.88875rem);
+  height: clamp(3.193125em, 13.62vw, 4.88875em);
 }
 
 .rockSize img {
   /* width mobile: 42.05px fullscreen:64.3px */
-  width: clamp(2.628125rem, 11.213vw, 4.01875rem);
+  width: clamp(2.628125em, 11.213vw, 4.01875em);
   /* height mobile: 42.2px fullscreen: 64.56px */
-  height: clamp(2.6375rem, 11.253vw, 4.035rem);
+  height: clamp(2.6375em, 11.253vw, 4.035em);
 }
 
 /* grid location classes */
@@ -158,17 +158,18 @@
 }
 
 @media only screen and (min-width: 62.5rem) {
-  .btnContainer:hover {
+  /* enabled used to not allow hover on disabled state */
+  .btnContainer:hover:enabled {
     cursor: pointer;
   }
 
-  .btnContainer:hover::after {
+  .btnContainer:hover:enabled::after {
     position: absolute;
     content: '';
-    top: -24px;
-    left: -27px;
-    width: 252px;
-    height: 248px;
+    top: -1.5em;
+    left: -1.6875em;
+    width: 15.75em;
+    height: 15.5em;
     border-radius: 50%;
     background-color: #fff;
     opacity: 0.05;
