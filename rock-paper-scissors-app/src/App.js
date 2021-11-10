@@ -30,13 +30,22 @@ function App() {
   //handling user click game option
   const [playerSelection, setPlayerSelection] = useState('');
 
+  //score logic
+  const [score, setScore] = useState(0);
+  const scoreKeeper = (result) => {
+    // guard clause for a tie in game
+    if (typeof result === 'string') return;
+
+    result ? setScore((prev) => prev + 1) : setScore((prev) => prev - 1);
+  };
+
   const gameReset = function () {
     setPlayerSelection('');
   };
 
   return (
     <main>
-      <GameScoreHeader />
+      <GameScoreHeader score={score} />
       {playerSelection === '' ? (
         <SelectionTriangle
           playerSelectionSetFunction={(selection) => {
@@ -44,7 +53,11 @@ function App() {
           }}
         />
       ) : (
-        <Stage playerSelection={playerSelection} onPlayAgain={gameReset} />
+        <Stage
+          playerSelection={playerSelection}
+          onPlayAgain={gameReset}
+          scoreKeeper={scoreKeeper}
+        />
       )}
       <RulesButton onClick={modalAppear} />
       {isModalOpen && modal}

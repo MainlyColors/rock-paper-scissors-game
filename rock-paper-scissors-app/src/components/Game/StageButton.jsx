@@ -44,6 +44,8 @@ function StageButton(props) {
   useEffect(() => {
     //guard clause, to prevent a useEffect state change
     if (props.player === 'player') return;
+    //guard clause, to prevent a rerender changing score again
+    if (pcChoosing) return;
 
     const houseTimer = setTimeout(() => {
       setPcChoosing(true);

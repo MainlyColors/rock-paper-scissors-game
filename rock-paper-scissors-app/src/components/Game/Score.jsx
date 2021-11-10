@@ -5,7 +5,7 @@ function Score(props) {
   return (
     <FilledBox className={styles.scoreContainer}>
       <div className={styles.scoreHeader}>score</div>
-      <div className={styles.scoreNumber}>11</div>
+      <div className={styles.scoreNumber}>{props.score}</div>
     </FilledBox>
   );
 }

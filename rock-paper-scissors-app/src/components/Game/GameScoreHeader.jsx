@@ -9,7 +9,7 @@ function GameScoreHeader(props) {
   return (
     <div className={styles.GameScoreHeaderContainer}>
       <img src={logo} alt="Rock, Paper, Scissors" className={styles.logo} />
-      <Score />
+      <Score score={props.score} />
     </div>
   );
 }

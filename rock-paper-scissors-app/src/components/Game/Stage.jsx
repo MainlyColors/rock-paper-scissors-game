@@ -48,6 +48,7 @@ function Stage(props) {
   const checkResults = (player1, player2) => {
     const result = gameKey(player1, player2);
     setIsResults(result);
+    props.scoreKeeper(result);
   };
 
   return (
