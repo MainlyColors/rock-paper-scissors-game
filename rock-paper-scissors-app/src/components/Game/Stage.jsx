@@ -47,10 +47,6 @@ function Stage(props) {
   // will trigger after house plays
   const checkResults = (player1, player2) => {
     const result = gameKey(player1, player2);
-    if (result === 'tie') {
-      console.log('there was a tie');
-      return;
-    }
     setIsResults(result);
   };
 

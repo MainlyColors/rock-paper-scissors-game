@@ -1,7 +1,12 @@
 import styles from './WinLose.module.css';
 import PlayAgainBtn from './PlayAgainBtn';
 function WinLose(props) {
-  const results = props.result ? 'you win' : 'you lose';
+  const results =
+    props.result && typeof props.result === 'boolean'
+      ? 'you win'
+      : !props.result && typeof props.result === 'boolean'
+      ? 'you lose'
+      : 'tie!!!';
 
   return (
     <div className={styles.winLoseContainer}>
