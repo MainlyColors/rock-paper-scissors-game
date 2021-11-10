@@ -7,17 +7,17 @@ function SelectionTriangle(props) {
   return (
     <div className={styles.triangleContainer}>
       <GameButton
-        onClick={props.playerSelectionPass}
+        onClick={props.playerSelectionSetFunction}
         type={'paper'}
         gridLocation={'grid-left'}
       />
       <GameButton
-        onClick={props.playerSelectionPass}
+        onClick={props.playerSelectionSetFunction}
         type={'scissors'}
         gridLocation={'grid-right'}
       />
       <GameButton
-        onClick={props.playerSelectionPass}
+        onClick={props.playerSelectionSetFunction}
         type={'rock'}
         gridLocation={'grid-bottom'}
       />

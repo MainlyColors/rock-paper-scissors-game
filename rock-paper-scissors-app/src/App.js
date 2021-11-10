@@ -6,20 +6,22 @@ import ReactDOM from 'react-dom';
 import './App.css';
 
 // components
-import Main from './components/UI/Main';
 import GameScoreHeader from './components/Game/GameScoreHeader';
 import SelectionTriangle from './components/Game/SelectionTriangle';
 import RulesButton from './components/Game/RulesButton';
 import RulesModal from './components/Game/RulesModal';
 import Stage from './components/Game/Stage';
+
 function App() {
   // modal functions
-  const [modalPresent, modalPresentSet] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // modal window toggle - controlled by rules button
   const modalAppear = function () {
-    modalPresent ? modalPresentSet(false) : modalPresentSet(true);
+    isModalOpen ? setIsModalOpen(false) : setIsModalOpen(true);
   };
 
+  // modal portal for better ally
   const modal = ReactDOM.createPortal(
     <RulesModal modalControls={modalAppear} />,
     document.getElementById('rules-modal')
@@ -28,24 +30,21 @@ function App() {
   //handling user click game option
   const [playerSelection, setPlayerSelection] = useState('');
 
-  // selection = string
-  const onClickPlayerSelectionHandler = function (selection) {
-    setPlayerSelection(selection);
-  };
-
   return (
-    <Main>
+    <main>
       <GameScoreHeader />
       {playerSelection === '' ? (
         <SelectionTriangle
-          playerSelectionPass={onClickPlayerSelectionHandler}
+          playerSelectionSetFunction={(selection) => {
+            setPlayerSelection(selection);
+          }}
         />
       ) : (
         <Stage playerSelection={playerSelection} />
       )}
       <RulesButton onClick={modalAppear} />
-      {modalPresent && modal}
-    </Main>
+      {isModalOpen && modal}
+    </main>
   );
 }
 
