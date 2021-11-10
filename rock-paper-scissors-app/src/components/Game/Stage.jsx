@@ -66,7 +66,9 @@ function Stage(props) {
           }}
         />
       </div>
-      {isResults !== '' && <WinLose result={isResults} />}
+      {isResults !== '' && (
+        <WinLose result={isResults} onPlayAgain={props.onPlayAgain} />
+      )}
     </React.Fragment>
   );
 }

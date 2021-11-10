@@ -6,7 +6,7 @@ function WinLose(props) {
   return (
     <div className={styles.winLoseContainer}>
       <div className={styles.winLoseTitle}>{results}</div>
-      <PlayAgainBtn />
+      <PlayAgainBtn onPlayAgain={props.onPlayAgain} />
     </div>
   );
 }

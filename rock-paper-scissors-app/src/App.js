@@ -30,6 +30,10 @@ function App() {
   //handling user click game option
   const [playerSelection, setPlayerSelection] = useState('');
 
+  const gameReset = function () {
+    setPlayerSelection('');
+  };
+
   return (
     <main>
       <GameScoreHeader />
@@ -40,7 +44,7 @@ function App() {
           }}
         />
       ) : (
-        <Stage playerSelection={playerSelection} />
+        <Stage playerSelection={playerSelection} onPlayAgain={gameReset} />
       )}
       <RulesButton onClick={modalAppear} />
       {isModalOpen && modal}
