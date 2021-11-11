@@ -49,6 +49,7 @@ function Stage(props) {
     const result = gameKey(player1, player2);
     setIsResults(result);
     props.scoreKeeper(result);
+    props.rulesButtonMarginControlHandler();
   };
 
   return (

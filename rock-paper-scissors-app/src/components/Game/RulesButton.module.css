@@ -18,13 +18,13 @@
   z-index: 99;
 }
 
-.rulesBtn--normal {
+/* .rulesBtn--normal {
   margin-top: 8.75rem;
 }
 
 .rulesBtn--WinLose {
   margin-top: 3.25rem;
-}
+} */
 
 .rulesBtn:hover {
   background-image: var(--clr-whiteFade-bg);

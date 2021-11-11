@@ -41,6 +41,13 @@ function App() {
 
   const gameReset = function () {
     setPlayerSelection('');
+    setRulesButtonStyle('stage');
+  };
+
+  // rules button style change
+  const [rulesButtonStyle, setRulesButtonStyle] = useState('stage');
+  const rulesButtonStyleHandler = function () {
+    setRulesButtonStyle('winLose');
   };
 
   return (
@@ -57,9 +64,14 @@ function App() {
           playerSelection={playerSelection}
           onPlayAgain={gameReset}
           scoreKeeper={scoreKeeper}
+          rulesButtonMarginControlHandler={rulesButtonStyleHandler}
         />
       )}
-      <RulesButton onClick={modalAppear} />
+      <RulesButton
+        onClick={modalAppear}
+        marginControl={rulesButtonStyle}
+        playerSelection={playerSelection}
+      />
       {isModalOpen && modal}
     </main>
   );
