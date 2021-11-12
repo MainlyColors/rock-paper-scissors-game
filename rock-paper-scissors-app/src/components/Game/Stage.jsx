@@ -52,10 +52,19 @@ function Stage(props) {
     props.rulesButtonMarginControlHandler();
   };
 
+  // widens stage container for winLose component to fit in
+  const winLoseStyles =
+    isResults !== '' ? styles['stageContainer--winLose'] : '';
+
   return (
     <React.Fragment>
-      <div className={styles.stageContainer}>
+      <div className={`${styles.stageContainer} ${winLoseStyles}`}>
         <StageButton player={'player'} selection={props.playerSelection} />
+        {isResults !== '' && window.innerWidth >= 1000 ? (
+          <WinLose result={isResults} onPlayAgain={props.onPlayAgain} />
+        ) : (
+          ''
+        )}
         <StageButton
           player={'pc'}
           selection={ComputerSelection}
@@ -64,8 +73,10 @@ function Stage(props) {
           }}
         />
       </div>
-      {isResults !== '' && (
+      {isResults !== '' && window.innerWidth <= 1000 ? (
         <WinLose result={isResults} onPlayAgain={props.onPlayAgain} />
+      ) : (
+        ''
       )}
     </React.Fragment>
   );
