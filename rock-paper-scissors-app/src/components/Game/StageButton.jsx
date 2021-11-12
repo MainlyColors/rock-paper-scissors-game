@@ -7,6 +7,9 @@ import EmptyButton from './EmptyButton';
 function StageButton(props) {
   const [pcChoosing, setPcChoosing] = useState(false);
 
+  //timer
+  // const [timer, setTimer] = useState()
+
   // options player or pc
   const contestant =
     props.player === 'player' ? (
@@ -50,7 +53,7 @@ function StageButton(props) {
     const houseTimer = setTimeout(() => {
       setPcChoosing(true);
       props.afterRender();
-    }, 1000);
+    }, 1500);
 
     return () => {
       clearTimeout(houseTimer);
