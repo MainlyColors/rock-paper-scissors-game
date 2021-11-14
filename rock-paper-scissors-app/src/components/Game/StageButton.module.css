@@ -1,4 +1,5 @@
 .stageBtnContainer {
+  position: relative;
   height: clamp(11.375rem, 48.5vw, 24.6875rem);
   display: grid;
   justify-items: center;
@@ -24,6 +25,28 @@
   text-transform: uppercase;
 }
 
+/* .winEffect::before {
+  content: '';
+  position: absolute;
+  left: calc(-438px / 2);
+  top: calc(-426px / 2);
+  transform: translate(-25%, -25%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0) 170px,
+    rgba(255, 255, 255, 0.06) 170px,
+    rgba(255, 255, 255, 0.06) 212px,
+    rgba(255, 255, 255, 0.04) 212px,
+    rgba(255, 255, 255, 0.04) 282px,
+    rgba(255, 255, 255, 0.02) 282px
+  );
+  width: 730px;
+  height: 718px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: -9999;
+} */
+
 @media screen and (min-width: 62.5em) {
   .stageBtnContainer {
     grid-template-rows: min-content 1fr;
@@ -32,6 +55,9 @@
     margin-right: clamp(1.216875rem, 5.19vw, 2.144062rem);
   }
 
+  .containerOrder {
+    order: 2;
+  }
   .stageBtn {
     order: 2;
   }

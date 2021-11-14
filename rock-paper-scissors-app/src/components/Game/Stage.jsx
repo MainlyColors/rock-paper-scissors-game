@@ -59,7 +59,11 @@ function Stage(props) {
   return (
     <React.Fragment>
       <div className={`${styles.stageContainer} ${winLoseStyles}`}>
-        <StageButton player={'player'} selection={props.playerSelection} />
+        <StageButton
+          player={'player'}
+          selection={props.playerSelection}
+          highlightResults={isResults}
+        />
         {isResults !== '' && window.innerWidth >= 1000 ? (
           <WinLose result={isResults} onPlayAgain={props.onPlayAgain} />
         ) : (
@@ -71,6 +75,7 @@ function Stage(props) {
           afterRender={() => {
             checkResults(props.playerSelection, ComputerSelection);
           }}
+          highlightResults={!isResults}
         />
       </div>
       {isResults !== '' && window.innerWidth <= 1000 ? (

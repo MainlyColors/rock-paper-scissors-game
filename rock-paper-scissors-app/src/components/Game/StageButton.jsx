@@ -1,14 +1,12 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import styles from './StageButton.module.css';
 import GameButton from './GameButton';
 import EmptyButton from './EmptyButton';
+import CircularBeacon from '../UI/CircularBeacon';
 
 function StageButton(props) {
   const [pcChoosing, setPcChoosing] = useState(false);
-
-  //timer
-  // const [timer, setTimer] = useState()
 
   // options player or pc
   const contestant =
@@ -25,22 +23,32 @@ function StageButton(props) {
     );
 
   const playerButton = (
-    <GameButton
-      isDisabled={true}
-      className={styles.stageBtn}
-      type={props.selection}
-    />
+    <CircularBeacon
+      className={styles.containerOrder}
+      highlightResults={props.highlightResults}
+    >
+      <GameButton
+        isDisabled={true}
+        className={styles.stageBtn}
+        type={props.selection}
+      />
+    </CircularBeacon>
   );
 
   const computerButton =
     props.player === 'pc' && !pcChoosing ? (
       <EmptyButton className={styles.stageBtn} />
     ) : (
-      <GameButton
-        isDisabled={true}
-        className={styles.stageBtn}
-        type={props.selection}
-      />
+      <CircularBeacon
+        className={styles.containerOrder}
+        highlightResults={props.highlightResults}
+      >
+        <GameButton
+          isDisabled={true}
+          className={styles.stageBtn}
+          type={props.selection}
+        />
+      </CircularBeacon>
     );
 
   // useEffect only runs at start of render and whenever pcChoosing changes

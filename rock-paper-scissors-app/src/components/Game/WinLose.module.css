@@ -6,6 +6,7 @@
   height: 8.1875rem;
   margin-top: 3.875rem;
   animation: zoomIn 0.5s ease-in 0s 1;
+  z-index: 450;
 }
 
 .winLoseTitle {
