@@ -3,7 +3,6 @@
   height: clamp(11.375rem, 48.5vw, 24.6875rem);
   display: grid;
   justify-items: center;
-  align-items: end;
   grid-template-rows: 1fr min-content;
   gap: clamp(1.0625rem, 4.5vw, 3.9375rem);
 }
@@ -50,6 +49,7 @@
 @media screen and (min-width: 62.5em) {
   .stageBtnContainer {
     grid-template-rows: min-content 1fr;
+    align-items: end;
   }
   .stageTitle--EmptyBtn {
     margin-right: clamp(1.216875rem, 5.19vw, 2.144062rem);
