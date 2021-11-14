@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 import styles from './StageButton.module.css';
 import GameButton from './GameButton';
@@ -66,7 +66,7 @@ function StageButton(props) {
     return () => {
       clearTimeout(houseTimer);
     };
-  }, [pcChoosing]);
+  }, [pcChoosing, props]);
 
   return (
     <div className={styles.stageBtnContainer}>

@@ -37,9 +37,7 @@ const gameKey = (player1, player2) => {
 
 function Stage(props) {
   // lazy useState, runs once initial render
-  const [ComputerSelection, setComputerSelection] = useState(() =>
-    randomPick()
-  );
+  const [ComputerSelection] = useState(() => randomPick());
 
   // win/lose logic
   const [isResults, setIsResults] = useState('');
